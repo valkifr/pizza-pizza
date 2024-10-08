@@ -1,0 +1,29 @@
+:root {
+    --bg-color: #ffdba1;
+    --menu-color: #dcb068;
+}
+
+html {
+    background-color: var(--bg-color);
+}
+
+.container {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.menu {
+    background-color: transparent;
+    background-image: url(src/img/wood.jpeg);
+    background-repeat: repeat;
+    width: 70vw;
+    height: 70vh;
+    border-radius: 9px;
+    box-shadow: 0px 0px 55px 10px #b08c513b;
+}
+
+.menu-item {
+    background-color: rgb(34, 0, 255);
+}
