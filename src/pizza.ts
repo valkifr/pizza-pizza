@@ -22,6 +22,20 @@ type Order = {
   status: 'ordered' | 'completed';
 };
 
+// export function getPizzaDetail(identifier: string | number): Pizza | undefined {
+//   if (typeof identifier === 'string') {
+//     return menu.find((pizza) =>
+//       pizza.name.toLowerCase() === identifier.toLowerCase()
+//     );
+//   } else if (typeof identifier === 'number') {
+//     return menu.find((pizza) => pizza.id === identifier);
+//   } else {
+//     throw new TypeError(
+//       'Parameter `identifier` must be either a string or a number',
+//     );
+//   }
+// }
+
 export function addNewPizza(pizzaObj: Pizza): Pizza {
   menu.push(pizzaObj);
   return pizzaObj;
@@ -51,44 +65,23 @@ export function completeOrder(orderId: number): Order | undefined {
   return order;
 }
 
-
-
-
-
 const menuBoard = document.querySelector('.menu') as HTMLDivElement;
 
 menu.forEach((pizza) => {
-    
-    const menuItem = document.createElement('div');
-    const menuName = document.createElement('p');
-    const menuPrice = document.createElement('p');
-    const menuButton = document.createElement('button');
-    
-    menuName.textContent = pizza.name;
-    menuPrice.textContent = `${pizza.price}`;
-    menuButton.textContent = 'Order';
-    
-    
-    menuItem.appendChild(menuName);
-    menuItem.appendChild(menuPrice);
-    menuItem.appendChild(menuButton);
-    menuBoard.appendChild(menuItem);
+  const menuItem = document.createElement('div');
+  const menuName = document.createElement('p');
+  const menuPrice = document.createElement('p');
+  const menuButton = document.createElement('button');
 
-    console.log('hawk tuh')
+  menuName.textContent = pizza.name;
+  menuPrice.textContent = `${pizza.price}`;
+  menuButton.textContent = 'Order';
+  menuItem.classList.add('pizza');
+
+  menuItem.appendChild(menuName);
+  menuItem.appendChild(menuPrice);
+  menuItem.appendChild(menuButton);
+  menuBoard.appendChild(menuItem);
+
+  console.log('added menuitem');
 });
-
-
-
-// export function getPizzaDetail(identifier: string | number): Pizza | undefined {
-//   if (typeof identifier === 'string') {
-//     return menu.find((pizza) =>
-//       pizza.name.toLowerCase() === identifier.toLowerCase()
-//     );
-//   } else if (typeof identifier === 'number') {
-//     return menu.find((pizza) => pizza.id === identifier);
-//   } else {
-//     throw new TypeError(
-//       'Parameter `identifier` must be either a string or a number',
-//     );
-//   }
-// }

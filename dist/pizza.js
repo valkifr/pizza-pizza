@@ -8,6 +8,19 @@ export const menu = [
     { id: nextPizzaId++, name: 'Hawaiian', price: 10 },
     { id: nextPizzaId++, name: 'Veggie', price: 9 },
 ];
+// export function getPizzaDetail(identifier: string | number): Pizza | undefined {
+//   if (typeof identifier === 'string') {
+//     return menu.find((pizza) =>
+//       pizza.name.toLowerCase() === identifier.toLowerCase()
+//     );
+//   } else if (typeof identifier === 'number') {
+//     return menu.find((pizza) => pizza.id === identifier);
+//   } else {
+//     throw new TypeError(
+//       'Parameter `identifier` must be either a string or a number',
+//     );
+//   }
+// }
 export function addNewPizza(pizzaObj) {
     menu.push(pizzaObj);
     return pizzaObj;
@@ -42,22 +55,10 @@ menu.forEach((pizza) => {
     menuName.textContent = pizza.name;
     menuPrice.textContent = `${pizza.price}`;
     menuButton.textContent = 'Order';
+    menuItem.classList.add('pizza');
     menuItem.appendChild(menuName);
     menuItem.appendChild(menuPrice);
     menuItem.appendChild(menuButton);
     menuBoard.appendChild(menuItem);
-    console.log('hawk tuh');
+    console.log('added menuitem');
 });
-// export function getPizzaDetail(identifier: string | number): Pizza | undefined {
-//   if (typeof identifier === 'string') {
-//     return menu.find((pizza) =>
-//       pizza.name.toLowerCase() === identifier.toLowerCase()
-//     );
-//   } else if (typeof identifier === 'number') {
-//     return menu.find((pizza) => pizza.id === identifier);
-//   } else {
-//     throw new TypeError(
-//       'Parameter `identifier` must be either a string or a number',
-//     );
-//   }
-// }
