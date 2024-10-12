@@ -1,8 +1,7 @@
 :root {
-    --bg-color: #ffdba1;
-    --menu-color: #dcb068;
+    --bg-color: #c98a57;
+    --menu-color: #bf7e49;
     --dark-red: #9f1c0d;
-
 }
 
 html {
@@ -10,6 +9,17 @@ html {
     font-family: 'Poppins', Arial, sans-serif;
     font-weight: 500;
 }
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar {
+    background-color: var(--menu-color);
+    width: 10rem;
+    height: 100vh;
+}
+
 .container {
     display: grid;
     place-content: center;
@@ -18,18 +28,19 @@ html {
 }
 
 .menu {
-    width: 85vw;
-    height: 75vh;
+    width: 28rem;
+    height: 85vh;
     border-radius: 9px;
-    box-shadow: 0px 0px 55px 10px #b08c513b;
+    box-shadow: 0px 0px 55px 10px #9b673353;
+    overflow-y: auto;
+    background-color: var(--menu-color);
 }
 
 .menu-item {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    width: 85vw;
-    
+    width: 28rem;
 }
 
 .menu-name {
@@ -42,17 +53,32 @@ html {
     height: 2rem;
     width: 7rem;
     color: white;
-    background-image: linear-gradient(rgb(196, 55, 55), var(--dark-red));
+    background-image: linear-gradient(rgb(205, 67, 67), var(--dark-red));
     border: none;
     margin-right: 15px;
-    font-size: .8em;
+    font-size: 0.8rem;
+    transition: all 150ms;
 }
 
-
-/* .menu-item button{
-    background-color: var(--dark-red);
-    border: none;
-    border-radius: 5px;
-    color: white;
+.menu-header {
+    margin: 0 auto;
+    position: sticky;
+    top: 0px;
     padding: 10px;
-} */
+    background-color: var(--menu-color);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-header img {
+    width: 140px;
+}
+
+.menu-button:hover {
+    scale: 1.1;
+}
+
+.menu-header.sticking {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}

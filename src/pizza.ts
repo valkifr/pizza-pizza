@@ -2,14 +2,6 @@ let cashInRegister = 100;
 let nextOrderId = 1;
 let nextPizzaId = 1;
 
-export const orderQueue: Order[] = [];
-export const menu: Pizza[] = [
-  { id: nextPizzaId++, name: 'Margherita', price: 8 },
-  { id: nextPizzaId++, name: 'Pepperoni', price: 10 },
-  { id: nextPizzaId++, name: 'Hawaiian', price: 10 },
-  { id: nextPizzaId++, name: 'Veggie', price: 9 },
-];
-
 type Pizza = {
   id: number;
   name: string;
@@ -21,6 +13,26 @@ type Order = {
   pizza: Pizza;
   status: 'ordered' | 'completed';
 };
+
+export const orderQueue: Order[] = [];
+export const menu: Pizza[] = [
+  { id: nextPizzaId++, name: 'Margherita', price: 8 },
+  { id: nextPizzaId++, name: 'Pepperoni', price: 10 },
+  { id: nextPizzaId++, name: 'Hawaiian', price: 10 },
+  { id: nextPizzaId++, name: 'Veggie', price: 9 },
+  { id: nextPizzaId++, name: 'Meat Lovers', price: 12 },
+  { id: nextPizzaId++, name: 'Fruity', price: 7 },
+  { id: nextPizzaId++, name: 'Vegan', price: 9 },
+  { id: nextPizzaId++, name: 'Tuna', price: 13 },
+  { id: nextPizzaId++, name: 'Tuna', price: 13 },
+  { id: nextPizzaId++, name: 'Tuna', price: 13 },
+  { id: nextPizzaId++, name: 'Tuna', price: 13 },
+  { id: nextPizzaId++, name: 'Tuna', price: 13 },
+  { id: nextPizzaId++, name: 'Tuna', price: 13 },
+  { id: nextPizzaId++, name: 'Tuna', price: 13 },
+  { id: nextPizzaId++, name: 'Tuna', price: 13 },
+  { id: nextPizzaId++, name: 'Tuna', price: 13 },
+];
 
 // export function getPizzaDetail(identifier: string | number): Pizza | undefined {
 //   if (typeof identifier === 'string') {
@@ -65,6 +77,9 @@ export function completeOrder(orderId: number): Order | undefined {
   return order;
 }
 
+function buttonHandler() {
+  console.log('clicked');
+}
 const menuBoard = document.querySelector('.menu') as HTMLDivElement;
 
 menu.forEach((pizza) => {
@@ -76,6 +91,7 @@ menu.forEach((pizza) => {
   menuName.textContent = pizza.name;
   menuPrice.textContent = `${pizza.price}`;
   menuButton.textContent = `Order (${pizza.price}$)`;
+  menuButton.onclick = buttonHandler;
   menuItem.classList.add('menu-item');
   menuName.classList.add('menu-name');
   menuButton.classList.add('menu-button');
@@ -86,3 +102,17 @@ menu.forEach((pizza) => {
 
   console.log('added menuitem');
 });
+
+const primaryHeader = document.querySelector('.menu-header') as HTMLDivElement;
+const scrollWatcher = document.createElement('div');
+
+scrollWatcher.setAttribute('data-scroll-watcher', '');
+primaryHeader.before(scrollWatcher);
+
+const navObserver = new IntersectionObserver(
+  (entries) => {
+    primaryHeader.classList.toggle('sticking', !entries[0].isIntersecting);
+  },
+);
+
+navObserver.observe(scrollWatcher);
