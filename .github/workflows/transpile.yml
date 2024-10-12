@@ -1,8 +1,11 @@
-on: [push]
+on:
+  push:
+    paths:
+      - '**.ts'
 
 jobs:
   build-push:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     name: Builds Typescript
     steps:
       - name: Checkout
