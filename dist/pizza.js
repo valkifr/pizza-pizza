@@ -54,10 +54,11 @@ menu.forEach((pizza) => {
     const menuButton = document.createElement('button');
     menuName.textContent = pizza.name;
     menuPrice.textContent = `${pizza.price}`;
-    menuButton.textContent = 'Order';
-    menuItem.classList.add('pizza');
+    menuButton.textContent = `Order (${pizza.price}$)`;
+    menuItem.classList.add('menu-item');
+    menuName.classList.add('menu-name');
+    menuButton.classList.add('menu-button');
     menuItem.appendChild(menuName);
-    menuItem.appendChild(menuPrice);
     menuItem.appendChild(menuButton);
     menuBoard.appendChild(menuItem);
     console.log('added menuitem');

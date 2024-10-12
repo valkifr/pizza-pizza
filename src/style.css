@@ -1,12 +1,15 @@
 :root {
     --bg-color: #ffdba1;
     --menu-color: #dcb068;
+    --dark-red: #9f1c0d;
+
 }
 
 html {
     background-color: var(--bg-color);
+    font-family: 'Poppins', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
 }
-
 .container {
     display: grid;
     place-content: center;
@@ -15,15 +18,44 @@ html {
 }
 
 .menu {
-    background-color: transparent;
-    background-image: url(src/img/wood.jpeg);
+    
+    background-image: url(img/wood.png);
     background-repeat: repeat;
-    width: 70vw;
-    height: 70vh;
+    width: 85vw;
+    height: 75vh;
     border-radius: 9px;
     box-shadow: 0px 0px 55px 10px #b08c513b;
 }
 
 .menu-item {
-    background-color: rgb(34, 0, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 85vw;
+    
 }
+
+.menu-name {
+    padding-right: 50px;
+    margin-left: 20px;
+}
+
+.menu-button {
+    border-radius: 6px;
+    height: 2rem;
+    width: 7rem;
+    color: white;
+    background-image: linear-gradient(rgb(196, 55, 55), var(--dark-red));
+    border: none;
+    margin-right: 15px;
+    font-size: .8em;
+}
+
+
+/* .menu-item button{
+    background-color: var(--dark-red);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+} */
