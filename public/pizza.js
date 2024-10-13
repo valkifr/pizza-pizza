@@ -87,3 +87,34 @@ const navObserver = new IntersectionObserver((entries) => {
     primaryHeader.classList.toggle('sticking', !entries[0].isIntersecting);
 });
 navObserver.observe(scrollWatcher);
+const iconNames = [
+    'receipt_long',
+    'oven',
+    'new_releases',
+    'star',
+];
+const sectionNames = [
+    'Menu',
+    'Orders',
+    'Completed',
+    'Settings',
+];
+const sidebarList = document.querySelector('.sidebar ul');
+iconNames.forEach((iconName, index) => {
+    const link = document.createElement('a');
+    const icon = document.createElement('span');
+    const name = document.createElement('p');
+    const section = document.createElement('div');
+    const padding = document.createElement('li');
+    const sectionName = sectionNames[index];
+    console.log(sectionName);
+    padding.classList.add('sidebar-padding');
+    section.classList.add('sidebar-section');
+    icon.classList.add('material-symbols-outlined');
+    icon.textContent = iconName;
+    name.textContent = `${sectionName}`;
+    section.appendChild(icon);
+    section.appendChild(name);
+    padding.appendChild(section);
+    sidebarList.appendChild(padding);
+});
