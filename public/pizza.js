@@ -91,7 +91,7 @@ const iconNames = [
     'receipt_long',
     'oven',
     'new_releases',
-    'star',
+    'settings',
 ];
 const sectionNames = [
     'Menu',

@@ -121,7 +121,7 @@ const iconNames: string[] = [
   'receipt_long',
   'oven',
   'new_releases',
-  'star',
+  'settings',
 ];
 const sectionNames: string[] = [
   'Menu',
