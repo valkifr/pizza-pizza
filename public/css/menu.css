@@ -59,6 +59,10 @@
     color: var(--dark-red);
 }
 
+.menu-button:active {
+    background-color: #c4bba8;
+}
+
 .menu-header.sticking {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }

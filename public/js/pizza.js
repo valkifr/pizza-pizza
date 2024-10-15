@@ -93,11 +93,12 @@ const iconNames = [
     'new_releases',
     'settings',
 ];
-const sectionNames = [
-    'Menu',
-    'Orders',
-    'Completed',
-    'Settings',
+const sectionNames = ['Menu', 'Orders', 'Completed', 'Settings'];
+const links = [
+    '/index.html',
+    '/orders',
+    './completed',
+    '/settings',
 ];
 const sidebarList = document.querySelector('.sidebar ul');
 iconNames.forEach((iconName, index) => {
@@ -107,14 +108,18 @@ iconNames.forEach((iconName, index) => {
     const section = document.createElement('div');
     const padding = document.createElement('li');
     const sectionName = sectionNames[index];
-    console.log(sectionName);
+    const linkName = links[index];
+    link.href = linkName;
+    console.log(linkName);
     padding.classList.add('sidebar-padding');
-    section.classList.add('sidebar-section');
+    link.classList.add('sidebar-section');
     icon.classList.add('material-symbols-outlined');
+    section.id = `${sectionName.toLocaleLowerCase()}-${index}`;
     icon.textContent = iconName;
     name.textContent = `${sectionName}`;
-    section.appendChild(icon);
-    section.appendChild(name);
+    link.appendChild(icon);
+    link.appendChild(name);
+    section.appendChild(link);
     padding.appendChild(section);
     sidebarList.appendChild(padding);
 });
