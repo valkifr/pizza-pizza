@@ -11,6 +11,10 @@
     grid-template-columns: minmax(200px, 9%) 1fr;
 }
 
+.no-content {
+    width: 100px;
+}
+
 html, body {
     margin: 0;
 }

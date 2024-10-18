@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1">
+    <meta name="viewport"
+        content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
     <meta name="theme-color" content="#ffdba1" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#ffdba1" media="(prefers-color-scheme: dark)">
     <link
@@ -17,11 +18,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,500..700,0..1,0..200&icon=receipt_long oven settings new_releases&display=block" />
-    <title>pizza pizza</title>
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,500,0..1,-50..200&display=block" />
+    <title>pizza completed</title>
     <link rel="stylesheet" href="./public/css/style.css">
     <link rel="stylesheet" href="./public/css/menu.css">
     <link rel="stylesheet" href="./public/css/sidebar.css">
+    <link rel="stylesheet" href="./public/css/completed.css">
+    <style>
+        #completed-2 {
+            color: var(--text-color);
+            background-color: #9d6c45;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,13 +44,14 @@
         <div class="menu-container">
             <div class="menu">
                 <div class="menu-header">
-                    <img src="public/img/title.png" alt="pizzas" />
+                    <img src="public/img/completed.png" alt="completed" />
                 </div>
+                <img src="public/img/no-content.png" alt="no-content" class="no-content">
             </div>
         </div>
     </main>
 
-    <script src="./public/js/pizza.js" type="module"></script>
+    <script src="./public/js/completed.js" type="module"></script>
     <script src="./public/js/sidebar.js" type="module"></script>
 
 </body>

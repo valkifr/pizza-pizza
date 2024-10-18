@@ -53,10 +53,8 @@
     color: var(--text-color);
 }
 
-.sidebar-section:active {
-    filter: brightness(80%);
-}
-
 .sidebar-section p {
     margin: 0;
 }
+
+@media (width <= 700px) {}
