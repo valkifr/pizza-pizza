@@ -16,4 +16,4 @@ jobs:
           user-name: "valkifr"
           user-email: "ungvaryo@icloud.com"
           message: "Automatically built unbuilt typescript"
-          directories: ./src
+          directories: ./src, /
